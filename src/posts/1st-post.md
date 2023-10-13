@@ -1,7 +1,7 @@
 ---
-title: First post
-description: First post.
-date: '2023-4-14'
+title: 公司福利
+description: 每个人先领取100元
+date: '2023-9-28'
 categories:
   - sveltekit
   - svelte

@@ -1,6 +1,7 @@
 import type { Post } from '$lib/types';
 
-export async function load({ fetch }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function load({ fetch }: any) {
 	const response = await fetch('api/posts');
 	const posts: Post[] = await response.json();
 	return { posts };

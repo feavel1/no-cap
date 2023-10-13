@@ -10,25 +10,26 @@
 
 <nav class="list-nav p-4 mt-2 font-mono font-extralight">
 	<ul>
-		<li><a on:click={drawerClose} href="/">线下海报 / KEY VISION</a></li>
+		<li>
+			<a on:click={drawerClose} href="/key-vision"
+				>线下海报 / KEY VISION <span class="badge variant-filled ml-2">New!</span></a
+			>
+		</li>
 		<li><a on:click={drawerClose} href="/">电商 / E-COMMERCE DIAGRAM</a></li>
 
 		<li>
-			<a on:click={drawerClose} href="/posts">
-				传媒 / SOCIAL MEDIA
-				<span class="badge variant-filled ml-2">New!</span>
-			</a>
+			<a on:click={drawerClose} href="/"> 传媒 / SOCIAL MEDIA </a>
 		</li>
 
 		<li>
 			<a href="/">服装 / OUTFIT</a>
 		</li>
 		<li>
-			<a on:click={drawerClose} href="/subscription">视频 / VIDEO</a>
+			<a on:click={drawerClose} href="/">视频 / VIDEO</a>
 		</li>
 
 		<li>
-			<a on:click={drawerClose} href="/products" class="">本月首推 / FIRST OF THE MONTH</a>
+			<a on:click={drawerClose} href="/" class="">本月首推 / FIRST OF THE MONTH</a>
 		</li>
 	</ul>
 
@@ -39,15 +40,12 @@
 		</li>
 
 		<li>
-			<a on:click={drawerClose} href="/posts">
-				成员信息 / MEMBERS
-				<span class="badge variant-filled ml-2">New!</span>
-			</a>
+			<a on:click={drawerClose} href="/"> 成员信息 / MEMBERS </a>
 		</li>
 
 		<li>
-			<a href="/">NEW</a>
+			<a href="/new">NEW<span class="badge variant-filled ml-2">New!</span></a>
 		</li>
-		<li><a on:click={drawerClose} href="/subscription">合作方式 COLABORATION</a></li>
+		<li><a on:click={drawerClose} href="/">合作方式 COLABORATION</a></li>
 	</ul>
 </nav>
