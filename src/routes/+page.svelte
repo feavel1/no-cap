@@ -43,7 +43,7 @@
 	<div
 		class="lg:grid grid-rows-6 grid-cols-2 lg:mt-[20%] list-nav p-4 mt-2 font-mono font-extralight"
 	>
-		<ul class="row-span-6 row-start-1">
+		<ul class="row-span-6 row-start-1 child-hover:line-through">
 			<li>
 				<a href="/key-vision"
 					>线下海报 / KEY VISION <span class="badge variant-filled ml-2">New!</span>
@@ -66,7 +66,7 @@
 				<a href="/" class="">本月首推 / FIRST OF THE MONTH</a>
 			</li>
 		</ul>
-		<ul class="row-span-4 row-start-3">
+		<ul class="row-span-4 row-start-3 child-hover:line-through">
 			<li>
 				<a href="/">书籍 / BOOKS</a>
 			</li>
@@ -78,7 +78,7 @@
 			<li>
 				<a href="/new">NEW <span class="badge variant-filled ml-2">New!</span></a>
 			</li>
-			<li><a href="/subscription">合作方式 COLABORATION</a></li>
+			<li><a href="/">合作方式 COLABORATION</a></li>
 		</ul>
 	</div>
 

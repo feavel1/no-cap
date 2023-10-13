@@ -1,25 +1,30 @@
-import { join } from 'path'
-import type { Config } from 'tailwindcss'
+import { join } from 'path';
+import type { Config } from 'tailwindcss';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin';
-import { no_cap_theme } from './src/no_cap_theme'
+import { no_cap_theme } from './src/no_cap_theme';
 
 export default {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
+	],
 	theme: {
-		extend: {},
+		extend: {}
 	},
 	plugins: [
 		forms,
 		typography,
 		skeleton({
 			themes: {
-				custom: [
-					no_cap_theme,
-				],
-			},
+				custom: [no_cap_theme]
+			}
 		}),
-	],
+		function ({ addVariant }) {
+			addVariant('child', '& > *');
+			addVariant('child-hover', '& > *:hover');
+		}
+	]
 } satisfies Config;

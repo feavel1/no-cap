@@ -6,12 +6,13 @@
 
 <!-- Posts -->
 <section class="p-10 max-w-7xl">
+	<h1 class="h1 mb-10 font-mono">NEW</h1>
 	<div class="list">
 		{#each data.posts as post}
-			<div class="card w-full block card-hover variant-glass-primary">
+			<div class="card w-full block card-hover font-mono font-thin">
 				<div class="p-4 space-y-4">
 					<div>
-						<a href={post.slug} class="h1 group text-primary transition duration-300">
+						<a href="new/{post.slug}" class="h1 group text-primary transition duration-300">
 							{post.title}
 							<span
 								class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"

@@ -33,7 +33,7 @@
 		</li>
 	</ul>
 
-	<!-- <hr /> -->
+	<hr class="!border-dashed my-2" />
 	<ul>
 		<li>
 			<a on:click={drawerClose} href="/">书籍 / BOOKS</a>

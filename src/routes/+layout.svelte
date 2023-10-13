@@ -21,6 +21,7 @@
 	import Logo from '$lib/ui/icons/Logo.svelte';
 	import PageTransition from '$lib/ui/PageTransition.svelte';
 	import type { PageData } from './$types';
+	import Breadcrumbs from '$lib/ui/Breadcrumbs.svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	initializeStores();
@@ -53,28 +54,29 @@
 </Drawer>
 
 <!-- App Shell -->
-<AppShell class="lg:px-8 py-4 transition-transform {positionClasses}">
-	<svelte:fragment slot="pageHeader">
+<AppShell class="transition-transform {positionClasses}">
+	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar background="bg-surface-50-800-token">
+		<AppBar background="bg-surface-50-800-token" class="lg:px-8 py-4">
 			<svelte:fragment slot="lead">
-				<div class="flex flex-row gap-2">
-					<span class="hidden relative lg:flex h-3 w-3">
-						<span
-							class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
-						/>
-						<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-300"></span>
-					</span>
-					<a href="/">
-						<Logo />
-					</a>
+				<div class="flex flex-row justify-center gap-5">
+					<div class="flex flex-row">
+						<!-- <span class="hidden relative lg:flex h-3 w-3">
+							<span
+								class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
+							/>
+							<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-300"></span>
+						</span> -->
+						<a href="/">
+							<Logo />
+						</a>
+					</div>
+					<Breadcrumbs path={$page.url.pathname} />
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<LightSwitch />
-				<div class="flex items-center gap-2">
-					<HamburgerIcon />
-				</div>
+				<HamburgerIcon />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
