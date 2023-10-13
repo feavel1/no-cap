@@ -1,6 +1,8 @@
 <script>
 	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
 	import { onMount } from 'svelte';
+	import * as config from '$lib/config';
+
 	// import { fly } from 'svelte/transition';
 
 	let ready = false;
@@ -12,6 +14,10 @@
 		// }, 3000);
 	});
 </script>
+
+<svelte:head>
+	<title>{config.title}</title>
+</svelte:head>
 
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
