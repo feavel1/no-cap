@@ -7,7 +7,7 @@
 	<div
 		in:fly={{ y: -100, duration: 600, delay: 300 }}
 		out:fly={{ y: -50, duration: 300 }}
-		class="-z-50 h-0 px-8"
+		class="-z-50 h-0"
 	>
 		<slot />
 	</div>

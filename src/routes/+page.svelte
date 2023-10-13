@@ -46,9 +46,7 @@
 {#if !ready}
 	<Jellyfish />
 {:else}
-	<div
-		class="lg:grid grid-rows-6 grid-cols-2 lg:mt-[20%] list-nav p-4 mt-2 font-mono font-extralight"
-	>
+	<div class="lg:grid grid-rows-6 grid-cols-2 lg:mt-[20%] list-nav font-mono font-extralight">
 		<ul class="row-span-6 row-start-1 child-hover:line-through">
 			<li>
 				<a href="/key-vision"
@@ -88,8 +86,9 @@
 		</ul>
 	</div>
 
-	<hr />
-	<div class="grid grid-cols-1 mt-10 list-nav p-4 font-mono font-extralight">
+	<hr class="my-10" />
+
+	<div class="lg:grid grid-cols-1 list-nav font-mono font-extralight">
 		<ul>
 			<li>
 				<a href="/">

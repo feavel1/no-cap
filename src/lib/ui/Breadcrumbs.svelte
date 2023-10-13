@@ -22,7 +22,7 @@
 	}
 </script>
 
-<ol class="breadcrumb font-mono">
+<ol class="breadcrumb font-mono lg:flex hidden">
 	{#each crumbs as crumb, i}
 		{#if i == crumbs.length - 1}
 			<li class="crumb">

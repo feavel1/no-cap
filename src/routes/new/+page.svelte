@@ -5,7 +5,7 @@
 </script>
 
 <!-- Posts -->
-<section class="p-10 max-w-7xl">
+<section class="max-w-7xl">
 	<h1 class="h1 mb-10 font-mono">NEW</h1>
 	<div class="list">
 		{#each data.posts as post}

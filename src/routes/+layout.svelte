@@ -57,7 +57,7 @@
 <AppShell class="transition-transform {positionClasses}">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar background="bg-surface-50-800-token" class="lg:px-8 py-4">
+		<AppBar background="bg-surface-50-800-token" class="px-8">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
@@ -82,6 +82,8 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<PageTransition key={data.url}>
-		<slot />
+		<div class="px-4 lg:px-8 mt-2">
+			<slot />
+		</div>
 	</PageTransition>
 </AppShell>
