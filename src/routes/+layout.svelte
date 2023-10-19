@@ -57,7 +57,7 @@
 <AppShell class="transition-transform {positionClasses}">
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar background="bg-surface-50-800-token" class="px-8">
+		<AppBar background="bg-surface-50-800-token" class="px-4 lg:px-8">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
