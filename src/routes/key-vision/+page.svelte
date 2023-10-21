@@ -3,7 +3,7 @@
 <div class="lg:grid grid-rows-5 grid-cols-3 lg:mt-[20%] list-nav font-mono font-extralight">
 	<ul class="row-span-5 row-start-1 child-hover:line-through">
 		<li>
-			<a href="/key-vision/mother's-day">
+			<a href="/key-vision/mothers-day">
 				经典母亲节 <span class="badge variant-filled ml-2">New!</span>
 			</a>
 		</li>
