@@ -6,11 +6,11 @@
 	const drawerSettings: DrawerSettings = {
 		id: 'example-3',
 		// Provide your property overrides:
-		bgDrawer: 'bg-secondary-900 text-white',
-		bgBackdrop: 'bg-gradient-to-tr from-indigo-500/50 via-purple-500/50 to-pink-500/50',
-		width: 'w-[340px] md:w-[480px]',
-		padding: 'px-8 py-4',
-		rounded: 'rounded-xl',
+		bgDrawer: 'bg-white',
+		bgBackdrop: '',
+		width: 'min-w-full',
+		padding: '',
+		rounded: 'rounded-none',
 		duration: 700
 	};
 

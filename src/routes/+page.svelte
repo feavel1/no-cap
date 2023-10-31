@@ -1,106 +1,32 @@
-<script>
-	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
-	import { onMount } from 'svelte';
+<script lang="ts">
 	import * as config from '$lib/config';
+	import home from "$lib/assets/home/water.png"
+	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
+	import { fade } from 'svelte/transition';
 
-	// import { fly } from 'svelte/transition';
+	const drawerStore = getDrawerStore();
 
-	let ready = false;
+	const drawerSettings: DrawerSettings = {
+		id: 'example-3',
+		// Provide your property overrides:
+		bgDrawer: 'bg-white',
+		bgBackdrop: '',
+		width: 'min-w-full',
+		height:"h-screen",
+		padding: '',
+		rounded: 'rounded-none',
+		duration: 1000
+	};
 
-	onMount(() => {
-		// setTimeout(() => {
-		// 	console.log('欢迎👏');
-		ready = true;
-		// }, 3000);
-	});
+	function drawerOpen(): void {
+		drawerStore.open(drawerSettings);
+	}
 </script>
 
 <svelte:head>
 	<title>{config.title}</title>
 </svelte:head>
 
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
-<!-- <div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2 font-extralight Inter">欢迎.</h2>
-
-		<div class="flex justify-center space-x-2">
-			<a
-				class="btn variant-filled-primary font-thin"
-				href="https://skeleton.dev/"
-				target="_blank"
-				rel="noreferrer"
-			>
-				Launch Documentation
-			</a>
-		</div>
-		<div class="space-y-2">
-			<p>Try editing the following:</p>
-			<p><code class="code">/src/routes/+layout.svelte</code></p>
-			<p><code class="code">/src/routes/+page.svelte</code></p>
-		</div>
-	</div>
-</div> -->
-
-{#if !ready}
-	<Jellyfish />
-{:else}
-	<div class="lg:grid grid-rows-6 grid-cols-2 lg:mt-[20%] list-nav font-mono font-extralight">
-		<ul class="row-span-6 row-start-1 child-hover:line-through">
-			<li>
-				<a href="/key-vision"
-					>线下海报 / KEY VISION <span class="badge variant-filled ml-2">New!</span>
-				</a>
-			</li>
-			<li><a href="/">电商 / E-COMMERCE DIAGRAM</a></li>
-
-			<li>
-				<a href="/"> 传媒 / SOCIAL MEDIA </a>
-			</li>
-
-			<li>
-				<a href="/">服装 / OUTFIT</a>
-			</li>
-			<li>
-				<a href="/">视频 / VIDEO</a>
-			</li>
-
-			<li>
-				<a href="/" class="">本月首推 / FIRST OF THE MONTH</a>
-			</li>
-		</ul>
-		<ul class="row-span-4 row-start-3 child-hover:line-through">
-			<li>
-				<a href="/">书籍 / BOOKS</a>
-			</li>
-
-			<li>
-				<a href="/"> 成员信息 / MEMBERS </a>
-			</li>
-
-			<li>
-				<a href="/new">NEW <span class="badge variant-filled ml-2">New!</span></a>
-			</li>
-			<li><a href="/">合作方式 COLABORATION</a></li>
-		</ul>
-	</div>
-
-	<hr class="my-10" />
-
-	<div class="lg:grid grid-cols-1 list-nav font-mono font-extralight">
-		<ul>
-			<li>
-				<a href="/">
-					<p>NOCAP STUDIO</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<p>TEL: 130088826767</p>
-				</a>
-			</li>
-		</ul>
-	</div>
-{/if}
+<button class="fixed w-full h-full top-0 left-0 bg-center bg-fixed"  on:click={drawerOpen}>
+	<img src={home} class="w-full h-full" alt="Home">
+</button>

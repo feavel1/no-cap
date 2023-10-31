@@ -22,6 +22,8 @@
 	import PageTransition from '$lib/ui/PageTransition.svelte';
 	import type { PageData } from './$types';
 	import Breadcrumbs from '$lib/ui/Breadcrumbs.svelte';
+	import { onMount } from 'svelte';
+	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	initializeStores();
@@ -33,19 +35,34 @@
 		drawerStore.close();
 	}
 
-	$: positionClasses = $drawerStore.open ? 'translate-x-[-10%]' : '';
+	let translate = 'translate-x-[-10%]';
+	$: positionClasses = $drawerStore.open ? '' : '';
+
+	let ready = false;
+
+	onMount(() => {
+		setTimeout(() => {
+			ready = true;
+		}, 300);
+	});
 
 	// $: classesSidebar = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
 </script>
 
-<svelte:head>
-	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
-</svelte:head>
+<!-- <svelte:head>
+		{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+	</svelte:head> -->
 
-<Drawer position="right">
-	<div class="flex items-center justify-between">
-		<h2 class="p-4 h2">目录</h2>
-		<button class="btn btn-sm mr-4 variant-filled-error" on:click={drawerClose}>
+<Drawer position="left">
+	<div class="flex items-center justify-between px-4 lg:px-8 py-5 z-50">
+		<div class="flex flex-row justify-center gap-5">
+			<div class="flex flex-row">
+				<a href="/">
+					<Logo />
+				</a>
+			</div>
+		</div>
+		<button class="btn btn-sm variant-ghost-surface" on:click={drawerClose}>
 			<span>⛌</span>
 		</button>
 	</div>
@@ -53,20 +70,12 @@
 	<Navigation />
 </Drawer>
 
-<!-- App Shell -->
 <AppShell class="transition-transform {positionClasses}">
 	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<AppBar background="bg-surface-50-800-token" class="px-4 lg:px-8">
+		<AppBar background="bg-none" class="px-4 lg:px-8 z-50">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
-						<!-- <span class="hidden relative lg:flex h-3 w-3">
-							<span
-								class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
-							/>
-							<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-300"></span>
-						</span> -->
 						<a href="/">
 							<Logo />
 						</a>
@@ -82,8 +91,12 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<PageTransition key={data.url}>
-		<div class="px-4 lg:px-8 mt-2">
-			<slot />
-		</div>
+		{#if !ready}
+			<Jellyfish />
+		{:else}
+			<div class="px-4 lg:px-8 mt-2">
+				<slot />
+			</div>
+		{/if}
 	</PageTransition>
 </AppShell>
