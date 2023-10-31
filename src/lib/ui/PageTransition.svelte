@@ -14,7 +14,7 @@
 {/key} -->
 
 {#key key}
-	<div transition:fade class="-z-50 h-0">
+	<div transition:fade={{ duration: 3300 }} class="-z-50 h-0">
 		<slot />
 	</div>
 {/key}
