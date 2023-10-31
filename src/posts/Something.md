@@ -10,7 +10,7 @@ published: true
 
 ## Svelte
 
-Media inside the **static** folder is served from `/`.
+<!-- Media inside the **static** folder is served from `/`.
 
 ![Svelte](/favicon.png)
 ## Svelte
@@ -27,4 +27,4 @@ Media inside the **static** folder is served from `/`.
 
 Media inside the **static** folder is served from `/`.
 
-![Svelte](/favicon.png)
+![Svelte](/favicon.png) -->
