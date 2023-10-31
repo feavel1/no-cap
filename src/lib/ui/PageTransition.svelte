@@ -1,5 +1,15 @@
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
+	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
+	import { onMount } from 'svelte';
+
+	let ready = false;
+
+	onMount(() => {
+		setTimeout(() => {
+			ready = true;
+		}, 300);
+	});
 	export let key: string;
 </script>
 
@@ -14,7 +24,14 @@
 {/key} -->
 
 {#key key}
-	<div transition:fade={{ duration: 3300 }} class="-z-50 h-0">
+	{#if !ready}
+		<Jellyfish />
+	{/if}
+	<div
+		in:fade={{ duration: 1000, delay: 100 }}
+		out:fade={{ duration: 100, delay: 100 }}
+		class="z-50 h-0"
+	>
 		<slot />
 	</div>
 {/key}

@@ -6,7 +6,7 @@
 	const drawerSettings: DrawerSettings = {
 		id: 'example-3',
 		// Provide your property overrides:
-		bgDrawer: 'bg-white',
+		bgDrawer: 'bg-surface-50 dark:bg-surface-900',
 		bgBackdrop: '',
 		width: 'min-w-full',
 		padding: '',

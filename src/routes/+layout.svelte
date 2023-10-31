@@ -11,11 +11,14 @@
 		LightSwitch,
 		autoModeWatcher,
 		initializeStores,
-		Toast
+		Toast,
+		type DrawerSettings
 	} from '@skeletonlabs/skeleton';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import home from '$lib/assets/home/water.png';
+
 	import Navigation from '$lib/ui/Navigation.svelte';
 	import HamburgerIcon from '$lib/ui/HamburgerIcon.svelte';
 	import Logo from '$lib/ui/icons/Logo.svelte';
@@ -57,9 +60,7 @@
 	<div class="flex items-center justify-between px-4 lg:px-8 py-5 z-50">
 		<div class="flex flex-row justify-center gap-5">
 			<div class="flex flex-row">
-				<a href="/">
-					<Logo />
-				</a>
+				<Logo />
 			</div>
 		</div>
 		<button class="btn btn-sm variant-ghost-surface" on:click={drawerClose}>
@@ -70,9 +71,9 @@
 	<Navigation />
 </Drawer>
 
-<AppShell class="transition-transform {positionClasses}">
+<AppShell class="transition-transform {positionClasses} ">
 	<svelte:fragment slot="header">
-		<AppBar background="bg-none" class="px-4 lg:px-8 z-50">
+		<AppBar class="px-4 lg:px-8 backdrop-blur-sm" background="">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
@@ -89,14 +90,10 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	<!-- Page Route Content -->
+
 	<PageTransition key={data.url}>
-		{#if !ready}
-			<Jellyfish />
-		{:else}
-			<div class="px-4 lg:px-8 mt-2">
-				<slot />
-			</div>
-		{/if}
+		<div class="px-4 lg:px-8 mt-2">
+			<slot />
+		</div>
 	</PageTransition>
 </AppShell>

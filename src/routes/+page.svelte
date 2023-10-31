@@ -2,20 +2,18 @@
 	import * as config from '$lib/config';
 	import home from "$lib/assets/home/water.png"
 	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 
 	const drawerStore = getDrawerStore();
 
 	const drawerSettings: DrawerSettings = {
 		id: 'example-3',
-		// Provide your property overrides:
-		bgDrawer: 'bg-white',
+		bgDrawer: 'bg-surface-50 dark:bg-surface-900',
 		bgBackdrop: '',
 		width: 'min-w-full',
-		height:"h-screen",
 		padding: '',
 		rounded: 'rounded-none',
-		duration: 1000
+		duration: 700
 	};
 
 	function drawerOpen(): void {
@@ -27,6 +25,6 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<button class="fixed w-full h-full top-0 left-0 bg-center bg-fixed"  on:click={drawerOpen}>
-	<img src={home} class="w-full h-full" alt="Home">
-</button>
+
+	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<img class=" fixed bg-cover bg-center h-max min-h-screen top-0 bottom-0 left-0 right-0 " on:click={drawerOpen} src={home} alt="Home">
