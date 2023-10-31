@@ -27,4 +27,4 @@
 
 
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<img class=" fixed bg-cover bg-center h-max min-h-screen top-0 bottom-0 left-0 right-0 " on:click={drawerOpen} src={home} alt="Home">
+<img class=" fixed bg-cover bg-center h-max min-w-full min-h-screen top-0 bottom-0 left-0 right-0 " on:click={drawerOpen} src={home} alt="Home">
