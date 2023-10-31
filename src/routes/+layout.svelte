@@ -43,11 +43,11 @@
 
 	let ready = false;
 
-	onMount(() => {
-		setTimeout(() => {
-			ready = true;
-		}, 300);
-	});
+	// onMount(() => {
+	// 	setTimeout(() => {
+	// 		ready = true;
+	// 	}, 300);
+	// });
 
 	// $: classesSidebar = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
 </script>
@@ -91,9 +91,9 @@
 		</AppBar>
 	</svelte:fragment>
 
-	<PageTransition key={data.url}>
-		<div class="px-4 lg:px-8 mt-2">
+	<div class="px-4 lg:px-8 mt-2">
+		<PageTransition key={data.url}>
 			<slot />
-		</div>
-	</PageTransition>
+		</PageTransition>
+	</div>
 </AppShell>

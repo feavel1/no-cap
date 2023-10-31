@@ -2,7 +2,7 @@
 	import * as config from '$lib/config';
 	import home from "$lib/assets/home/water.png"
 	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	const drawerStore = getDrawerStore();
 
@@ -26,5 +26,8 @@
 </svelte:head>
 
 
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<img class=" fixed bg-cover bg-center h-max min-w-full min-h-screen top-0 bottom-0 left-0 right-0 " on:click={drawerOpen} src={home} alt="Home">
+<button class="" on:click={drawerOpen}>
+<img class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0" in:fade={{duration:2000 , delay:1300}}  src={home} alt="Home">
+</button>
+
+<!-- <div class="w-full h-full bg-no-repeat bg-center bg-cover bg-fixed bg-[image:url('$lib/assets/home/water.png')]" /> -->

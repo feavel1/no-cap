@@ -6,9 +6,9 @@
 	let ready = false;
 
 	onMount(() => {
-		setTimeout(() => {
-			ready = true;
-		}, 300);
+		// setTimeout(() => {
+		ready = true;
+		// }, 300);
 	});
 	export let key: string;
 </script>
@@ -27,11 +27,7 @@
 	{#if !ready}
 		<Jellyfish />
 	{/if}
-	<div
-		in:fade={{ duration: 1000, delay: 100 }}
-		out:fade={{ duration: 100, delay: 100 }}
-		class="z-50 h-0"
-	>
+	<div in:fly={{ delay: 0, duration: 1000 }} out:fly={{ duration: 1000, y: -10 }} class="z-50 h-0">
 		<slot />
 	</div>
 {/key}
