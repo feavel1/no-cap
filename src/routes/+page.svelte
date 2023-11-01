@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config';
-	import home from "$lib/assets/home/water.png"
+	import home from '$lib/assets/home/water.png';
 	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 
@@ -25,9 +25,13 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-
 <button class="" on:click={drawerOpen}>
-<img class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0" in:fade={{duration:2000 , delay:1300}}  src={home} alt="Home">
+	<img
+		class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0"
+		in:fade={{ duration: 300 }}
+		src={home}
+		alt="Home"
+	/>
 </button>
 
 <!-- <div class="w-full h-full bg-no-repeat bg-center bg-cover bg-fixed bg-[image:url('$lib/assets/home/water.png')]" /> -->

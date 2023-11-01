@@ -27,7 +27,11 @@
 	{#if !ready}
 		<Jellyfish />
 	{/if}
-	<div in:fly={{ delay: 0, duration: 1000 }} out:fly={{ duration: 1000, y: -10 }} class="z-50 h-0">
+	<div
+		in:fly={{ delay: -600, duration: 600 }}
+		out:fly={{ duration: 600, y: -100 }}
+		class="z-50 h-0"
+	>
 		<slot />
 	</div>
 {/key}
