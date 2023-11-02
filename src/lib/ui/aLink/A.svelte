@@ -9,6 +9,8 @@
 	export let href: string;
 </script>
 
-<a on:click={drawerClose} {href}>
-	<slot />
-</a>
+<li class="child-hover:line-through">
+	<a on:click={drawerClose} {href}>
+		<slot />
+	</a>
+</li>

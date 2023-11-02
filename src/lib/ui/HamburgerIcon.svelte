@@ -11,7 +11,7 @@
 		width: 'min-w-full',
 		padding: '',
 		rounded: 'rounded-none',
-		duration: 700
+		duration: 1100
 	};
 
 	function drawerOpen(): void {

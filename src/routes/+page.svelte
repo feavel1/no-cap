@@ -13,7 +13,7 @@
 		width: 'min-w-full',
 		padding: '',
 		rounded: 'rounded-none',
-		duration: 700
+		duration: 1100
 	};
 
 	function drawerOpen(): void {
@@ -28,7 +28,7 @@
 <button class="" on:click={drawerOpen}>
 	<img
 		class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0"
-		in:fade={{ duration: 300 }}
+		in:fade={{ duration: 1500 }}
 		src={home}
 		alt="Home"
 	/>

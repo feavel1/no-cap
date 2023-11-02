@@ -9,7 +9,7 @@
 	<h1 class="h1 mb-10 font-mono">NEW</h1>
 	<div class="list">
 		{#each data.posts as post}
-			<div class="card w-full block card-hover font-mono font-thin">
+			<div class=" w-full block card-hover font-mono font-thin">
 				<div class="p-4 space-y-4">
 					<div>
 						<a href="new/{post.slug}" class="h1 group text-primary transition duration-300">

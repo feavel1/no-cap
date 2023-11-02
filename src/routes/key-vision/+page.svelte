@@ -1,5 +1,3 @@
-<h2 class="h2 font-extralight font-mono mb-10">线下海报 / Key Vision</h2>
-
 <div class="lg:grid grid-rows-5 grid-cols-3 lg:mt-[20%] list-nav font-mono font-extralight">
 	<ul class="row-span-5 row-start-1 child-hover:line-through">
 		<li>

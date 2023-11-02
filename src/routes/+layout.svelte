@@ -52,9 +52,9 @@
 	// $: classesSidebar = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
 </script>
 
-<!-- <svelte:head>
-		{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
-	</svelte:head> -->
+<svelte:head>
+	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+</svelte:head>
 
 <Drawer position="left">
 	<div class="flex items-center justify-between px-4 lg:px-8 py-5 z-50">
@@ -73,7 +73,7 @@
 
 <AppShell class="transition-transform {positionClasses} ">
 	<svelte:fragment slot="header">
-		<AppBar class="px-4 lg:px-8 backdrop-blur-sm" background="">
+		<AppBar class="px-4 lg:px-8" background="">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
@@ -91,7 +91,7 @@
 		</AppBar>
 	</svelte:fragment>
 
-	<div class="px-4 lg:px-8 mt-2">
+	<div class="px-4 lg:px-8">
 		<PageTransition key={data.url}>
 			<slot />
 		</PageTransition>

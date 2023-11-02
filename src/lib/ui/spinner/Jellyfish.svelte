@@ -15,7 +15,7 @@
 <div
 	in:fade={{ delay: 300 }}
 	out:fade={{ duration: 300 }}
-	class="fixed top-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-base-100 opacity-90"
+	class="fixed top-0 left-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-base-100 opacity-90"
 >
 	<div
 		class="wrapper"

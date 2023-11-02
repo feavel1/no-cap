@@ -28,7 +28,7 @@
 		<Jellyfish />
 	{/if}
 	<div
-		in:fly={{ delay: -600, duration: 600 }}
+		in:fade={{ delay: -600, duration: 300 }}
 		out:fly={{ duration: 600, y: -100 }}
 		class="z-50 h-0"
 	>
