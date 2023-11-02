@@ -10,14 +10,13 @@
 		getDrawerStore,
 		LightSwitch,
 		autoModeWatcher,
-		initializeStores,
-		Toast,
-		type DrawerSettings
+		// Toast,
+		// type DrawerSettings,
+		initializeStores
 	} from '@skeletonlabs/skeleton';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-	import home from '$lib/assets/home/water.png';
 
 	import Navigation from '$lib/ui/Navigation.svelte';
 	import HamburgerIcon from '$lib/ui/HamburgerIcon.svelte';
@@ -43,11 +42,11 @@
 
 	let ready = false;
 
-	// onMount(() => {
-	// 	setTimeout(() => {
-	// 		ready = true;
-	// 	}, 300);
-	// });
+	onMount(() => {
+		// setTimeout(() => {
+		ready = true;
+		// }, 300);
+	});
 
 	// $: classesSidebar = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
 </script>
@@ -90,7 +89,9 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-
+	{#if !ready}
+		<Jellyfish />
+	{/if}
 	<div class="px-4 lg:px-8">
 		<PageTransition key={data.url}>
 			<slot />
