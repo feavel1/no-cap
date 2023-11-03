@@ -7,3 +7,11 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+// Squelch warnings of image imports from your assets dir
+declare module '$lib/assets/*' {
+	var meta;
+	export default meta;
+}
+
+declare module 'svelte-carousel';
