@@ -22,18 +22,18 @@
 	};
 </script>
 
-<!-- <OffWhite pageText="母亲节"> -->
-{#if browser}
-	<Carousel
-		bind:this={carousel}
-		let:loaded
-		autoplay
-		autoplayDuration={1500}
-		autoplayProgressVisible
-	>
-		{#each images as src}
-			<Img {src} alt="cat" />
-		{/each}
-	</Carousel>
-{/if}
-<!-- </OffWhite> -->
+<OffWhite pageText="母亲节">
+	{#if browser}
+		<Carousel
+			bind:this={carousel}
+			let:loaded
+			autoplay
+			autoplayDuration={1500}
+			autoplayProgressVisible
+		>
+			{#each images as src}
+				<Img {src} alt="cat" />
+			{/each}
+		</Carousel>
+	{/if}
+</OffWhite>

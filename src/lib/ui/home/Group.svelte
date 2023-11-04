@@ -4,7 +4,7 @@
 	export let title: any;
 </script>
 
-<div class="relative w-96 mb-10">
+<div class="relative w-80 mb-10">
 	<h1 class="absolute top-0 right-0 text-xs">{title}</h1>
 	<ul class="list">
 		<slot />

@@ -66,7 +66,6 @@
 			<span>⛌</span>
 		</button>
 	</div>
-	<hr />
 	<Navigation />
 </Drawer>
 
