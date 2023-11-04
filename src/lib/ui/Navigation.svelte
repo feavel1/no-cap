@@ -11,8 +11,11 @@
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<div class="fixed w-screen h-screen top-0 left-0 font-thin mx-auto px-4 lg:px-8">
-	<div on:click={drawerClose} class="absolute bottom-0">
+<div
+	on:click={drawerClose}
+	class="fixed w-screen h-screen top-0 left-0 font-thin mx-auto px-4 lg:px-8"
+>
+	<div class="absolute bottom-0">
 		<div class="lg:grid grid-cols-2 gap-x-14">
 			<Group title="WORKS">
 				<A href="/key-vision">线下海报 / KEY VISION</A>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config';
-	import home from '$lib/assets/home/water.png';
+	import home from '$lib/assets/home/water.png?format=webp';
 	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 
