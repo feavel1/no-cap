@@ -35,7 +35,8 @@
 	const handleNextClick = () => {
 		carousel.goToNext();
 	};
-	let ref: any, loaded: boolean;
+	let ref: any = false,
+		loaded: boolean;
 	onMount(() => {
 		if (ref.complete) loaded = true;
 	});
