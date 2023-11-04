@@ -9,7 +9,7 @@
 	const modules = import.meta.glob('$lib/assets/key-vision/mothers-day/*.*', {
 		import: 'default',
 		eager: true,
-		query: { w: 640, h: 640, fit: 'cover', as: 'run' }
+		query: { w: 640, fit: 'cover', as: 'run' }
 	});
 	const images = Object.entries(modules).map((i) => i[1]);
 
@@ -22,12 +22,18 @@
 	};
 </script>
 
-<OffWhite pageText="母亲节">
-	{#if browser}
-		<Carousel>
-			{#each images as src}
-				<Img {src} alt="cat" />
-			{/each}
-		</Carousel>
-	{/if}
-</OffWhite>
+<!-- <OffWhite pageText="母亲节"> -->
+{#if browser}
+	<Carousel
+		bind:this={carousel}
+		let:loaded
+		autoplay
+		autoplayDuration={1500}
+		autoplayProgressVisible
+	>
+		{#each images as src}
+			<Img {src} alt="cat" />
+		{/each}
+	</Carousel>
+{/if}
+<!-- </OffWhite> -->
