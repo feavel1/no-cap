@@ -15,7 +15,7 @@
 	on:click={drawerClose}
 	class="fixed w-screen h-screen top-0 left-0 font-thin mx-auto px-4 lg:px-8"
 >
-	<div class="absolute bottom-0">
+	<div class="absolute bottom-20">
 		<div class="lg:grid grid-cols-2 gap-x-14">
 			<Group title="WORKS">
 				<A href="/key-vision">线下海报 / KEY VISION</A>

@@ -5,24 +5,23 @@
 </script>
 
 <!-- Posts -->
-<section class="max-w-6xl">
-	<h1 class="h1 mb-10 font-mono">NEW</h1>
+<section class="max-w-6xl mt-2">
 	<div class="list">
 		{#each data.posts as post}
-			<div class=" w-full block card-hover font-mono font-thin">
+			<div class="w-full block rounded-sm outline outline-1">
 				<div class="p-4 space-y-4">
 					<div>
-						<a href="new/{post.slug}" class="h1 group text-primary transition duration-300">
-							<div class="flex flex-row items-center justify-between">
+						<a href="new/{post.slug}" class="group text-primary transition duration-300">
+							<div class="flex flex-row items-center justify-between font-bold">
 								{post.title}
-								<p class="badge variant-filled-secondary">{formatDate(post.date)}</p>
+								<span class="badge text-xs variant-glass-primary">{formatDate(post.date)}</span>
 							</div>
 							<span
 								class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
 							/>
 						</a>
 					</div>
-					<p class="">{post.description}</p>
+					<p class="font-extralight">{post.description}</p>
 				</div>
 			</div>
 		{/each}
