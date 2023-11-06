@@ -1,10 +1,18 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const dirname = path.resolve(fileURLToPath(import.meta.url), '../');
+
 import { mdsvex } from 'mdsvex';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: ['.md']
+	extensions: ['.md'],
+	layout: {
+		post: path.join(dirname, './src/lib/ui/postLayout/post.svelte'),
+		pureMd: path.join(dirname, './src/lib/ui/postLayout/pureMd.svelte')
+	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */

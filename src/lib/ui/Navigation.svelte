@@ -18,7 +18,7 @@
 	<div class="absolute bottom-20">
 		<div class="lg:grid grid-cols-2 gap-x-14">
 			<Group title="WORKS">
-				<A href="/key-vision">线下海报 / KEY VISION</A>
+				<A href="/works/key-vision">线下海报 / KEY VISION</A>
 
 				<A href="/">电商 / E-COMMERCE DIAGRAM</A>
 
@@ -34,11 +34,11 @@
 			<Group title="BRAND">
 				<A href="/">书籍 / BOOKS</A>
 
-				<A href="/">成员信息 / MEMBERS</A>
+				<A href="/brand/members">成员信息 / MEMBERS</A>
 
 				<A href="/new">NEW</A>
 
-				<A href="/">合作方式 COLABORATION</A>
+				<A href="/brand/colaboration">合作方式 COLABORATION</A>
 			</Group>
 
 			<div class="relative w-80 mb-10">

@@ -67,17 +67,17 @@
 <div class="fixed w-screen h-screen top-0 left-0 mx-auto px-4 lg:px-8 font-thin">
 	<div class="absolute bottom-20">
 		<div class="lg:grid grid-cols-2 gap-x-14">
-			<Group title="WORKS">
-				<A href="/key-vision/mothers-day">经典母亲节</A>
+			<Group title="KEY-VISION">
+				<A href="/works/key-vision/mothers-day">经典母亲节</A>
 
-				<A href="/">谷粒多</A>
+				<A href="/works/key-vision/GuLiDuo">谷粒多</A>
 
-				<A href="/">东鹏</A>
+				<A href="/works/key-vision/dong-peng">东鹏</A>
 
-				<A href="/">优可舒</A>
+				<A href="/works/key-vision/youkeshu">优可舒</A>
 			</Group>
 
-			<Group title="BRAND">
+			<Group title="KEY-VISION">
 				<A href="/">大家乐</A>
 
 				<A href="/">植选</A>
