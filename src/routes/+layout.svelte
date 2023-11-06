@@ -79,7 +79,7 @@
 							<Logo />
 						</a>
 					</div>
-					<Breadcrumbs path={$page.url.pathname} />
+					<!-- <Breadcrumbs path={$page.url.pathname} /> -->
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
@@ -91,9 +91,9 @@
 	{#if !ready}
 		<Jellyfish />
 	{/if}
-	<div class="px-4 lg:px-8">
-		<PageTransition key={data.url}>
+	<PageTransition key={data.url}>
+		<div class="px-4 lg:px-8">
 			<slot />
-		</PageTransition>
-	</div>
+		</div>
+	</PageTransition>
 </AppShell>

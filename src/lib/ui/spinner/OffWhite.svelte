@@ -28,7 +28,7 @@
 
 {#if ready == false}
 	<div
-		in:fade={{ duration: 600 }}
+		in:fade={{ duration: 1000 }}
 		out:fade={{ duration: 600 }}
 		class="z-50 absolute text-3xl top-0 left-0 h-screen w-screen bg-surface-50 dark:bg-surface-900 flex flex-col items-center justify-center"
 	>

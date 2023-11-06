@@ -4,11 +4,7 @@
 </script>
 
 {#key key}
-	<div
-		in:fade={{ delay: 300, duration: 300 }}
-		out:fly={{ duration: 300, y: -100 }}
-		class="z-50 h-0"
-	>
+	<div in:fade={{ delay: 300, duration: 300 }} out:fly={{ duration: 300, y: 100 }} class="z-50 h-0">
 		<slot />
 	</div>
 {/key}

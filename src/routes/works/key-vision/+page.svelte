@@ -2,6 +2,7 @@
 	import A from '$lib/ui/aLink/A.svelte';
 
 	import Group from '$lib/ui/home/Group.svelte';
+	import { fade } from 'svelte/transition';
 </script>
 
 <div class="fixed w-screen h-screen top-0 left-0 mx-auto px-4 lg:px-8 font-thin">
