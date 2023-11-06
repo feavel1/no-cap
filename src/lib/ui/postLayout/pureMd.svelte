@@ -38,10 +38,12 @@
 /> -->
 
 <div class="w-full max-w-3xl">
-	<BackTo />
+	<!-- <BackTo /> -->
 
 	<div class="divider" />
-	<div class="prose-lg prose w-full max-w-3xl first-letter:text-cyan-300 font-thin">
+	<div
+		class="text-primary-900-50-token prose-lg prose w-full max-w-3xl first-letter:text-cyan-300 font-thin"
+	>
 		<slot />
 	</div>
 </div>

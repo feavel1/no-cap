@@ -9,21 +9,15 @@
 		<div class="lg:grid grid-cols-2 gap-x-14">
 			<Group title="KEY-VISION">
 				<A href="/works/key-vision/mothers-day">经典母亲节</A>
-
 				<A href="/works/key-vision/gu-li-duo">谷粒多</A>
-
 				<A href="/works/key-vision/dong-peng">东鹏</A>
-
 				<A href="/works/key-vision/you-ke-shu">优可舒</A>
 			</Group>
 
 			<Group title="KEY-VISION">
 				<A href="/">大家乐</A>
-
 				<A href="/">植选</A>
-
-				<A href="/new">哈尔滨啤酒</A>
-
+				<A href="/">哈尔滨啤酒</A>
 				<A href="/">纯水乐</A>
 			</Group>
 

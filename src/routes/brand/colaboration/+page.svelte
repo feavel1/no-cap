@@ -11,11 +11,9 @@
 		class="child:border-t-2 child:border-solid child:border-primary-400 "
 	>
 		<AccordionItem class="child:rounded-none">
-			<svelte:fragment slot="lead">
-				<span class="mr-32">项目预算</span>
-			</svelte:fragment>
-			<svelte:fragment slot="summary">PROJECT BUDGET</svelte:fragment>
-			<svelte:fragment slot="content">(content)</svelte:fragment>
+			<svelte:fragment slot="lead">123</svelte:fragment>
+			<svelte:fragment slot="summary">223</svelte:fragment>
+			<svelte:fragment slot="content">(内容)</svelte:fragment>
 		</AccordionItem>
 		<AccordionItem>
 			<svelte:fragment slot="lead">
