@@ -36,27 +36,24 @@
 	let ready: boolean = false;
 
 	onMount(() => {
-		ready = false;
 		setTimeout(() => {
 			ready = true;
-		}, 2500);
+		}, 5000);
 	});
 </script>
 
-<div class={ready ? 'block' : 'opacity-0'}>
-	{#if browser}
-		<Carousel on:pageChange={(event) => setNumber(event)} bind:this={carousel}>
-			<div class="flex flex-col justify-center" on:click={() => prevImage()} slot="prev">
-				<button class="btn-icon">←</button>
-			</div>
-			<div class="flex flex-col justify-center" slot="next" on:click={() => nextImage()}>
-				<button class="btn-icon">→</button>
-			</div>
-			{#each images as src}
-				<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
-			{/each}
-		</Carousel>
-	{/if}
+{#if browser && ready == true}
+	<Carousel on:pageChange={(event) => setNumber(event)} bind:this={carousel}>
+		<div class="flex flex-col justify-center" on:click={() => prevImage()} slot="prev">
+			<button class="btn-icon">←</button>
+		</div>
+		<div class="flex flex-col justify-center" slot="next" on:click={() => nextImage()}>
+			<button class="btn-icon">→</button>
+		</div>
+		{#each images as src}
+			<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
+		{/each}
+	</Carousel>
 	<div class="flex flex-col items-center justify-center mx-auto font-thin">
 		<div>
 			<span class="line-through">{currentSlideItem + 1}/{images.length}</span>
@@ -64,4 +61,4 @@
 		</div>
 		<div class="capitalize">NOCAP all rights reserved ℗</div>
 	</div>
-</div>
+{/if}
