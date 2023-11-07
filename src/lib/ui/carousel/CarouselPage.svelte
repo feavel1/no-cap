@@ -38,7 +38,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			ready = true;
-		}, 5000);
+		}, 1200);
 	});
 </script>
 
