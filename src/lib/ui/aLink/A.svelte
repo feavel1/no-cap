@@ -10,7 +10,7 @@
 </script>
 
 <li class="child-hover:line-through">
-	<a on:click={drawerClose} {href}>
+	<a on:click={drawerClose} {href} data-sveltekit-preload-code="eager">
 		<slot />
 	</a>
 </li>

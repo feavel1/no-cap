@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { linear } from 'svelte/easing';
 	import { fade, type FadeParams } from 'svelte/transition';
-	let ready: boolean;
 
+	export let pageText: String;
 	const typewriter = (node: Element, { speed = 1, easing = linear } = {}) => {
 		const text = node.textContent ?? '';
 		const duration = text.length / (speed * 0.005);
@@ -16,7 +16,8 @@
 			}
 		};
 	};
-	export let pageText: String;
+
+	let ready: boolean;
 
 	onMount(() => {
 		ready = false;
@@ -37,6 +38,5 @@
 			{pageText}
 		</div>
 	</div>
-{:else if ready == true}
-	<slot />
 {/if}
+<slot />

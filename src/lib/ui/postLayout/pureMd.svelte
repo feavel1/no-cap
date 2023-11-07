@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import SvelteSeo from 'svelte-seo';
-	import BackTo from '$lib/ui/BackTo.svelte';
+	// import BackTo from '$lib/ui/BackTo.svelte';
 </script>
 
 <!-- <SvelteSeo
