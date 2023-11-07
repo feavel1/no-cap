@@ -10,6 +10,5 @@
 	});
 </script>
 
-<OffWhite pageText="母亲节">
-	<CarouselPage title="Mother's day" {modules} />
-</OffWhite>
+<OffWhite pageText="母亲节" />
+<CarouselPage title="Mother's day" {modules} />

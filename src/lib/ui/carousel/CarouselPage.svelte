@@ -33,7 +33,7 @@
 
 	let carousel: { goToNext: () => void; goToPrev: () => void }; // for calling methods of the carousel instance
 
-	let ready: boolean;
+	let ready: boolean = false;
 
 	onMount(() => {
 		ready = false;
