@@ -5,7 +5,10 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div class="fixed w-screen h-screen top-0 left-0 mx-auto px-4 lg:px-8 font-thin">
+<div
+	in:fade={{ delay: 610, duration: 600 }}
+	class="fixed w-full h-full top-0 left-0 mx-auto px-4 lg:px-16 font-thin"
+>
 	<div class="absolute bottom-20">
 		<div class="lg:grid grid-cols-2 gap-x-14">
 			<Group title="KEY-VISION">

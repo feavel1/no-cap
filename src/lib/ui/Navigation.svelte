@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import { getDrawerStore, getModalStore } from '@skeletonlabs/skeleton';
 	import A from './aLink/A.svelte';
 	import Group from './home/Group.svelte';
 
@@ -8,12 +8,17 @@
 	function drawerClose(): void {
 		drawerStore.close();
 	}
+	const modalStore = getModalStore();
+
+	function modalClose(): void {
+		modalStore.close();
+	}
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <div
-	on:click={drawerClose}
-	class="fixed w-screen h-screen top-0 left-0 font-thin mx-auto px-4 lg:px-8"
+	on:click={modalClose}
+	class="fixed w-screen h-screen top-0 left-0 font-thin mx-auto px-4 lg:px-16"
 >
 	<div class="absolute bottom-20">
 		<div class="lg:grid grid-cols-2 gap-x-14">

@@ -1,23 +1,18 @@
 <script lang="ts">
 	import * as config from '$lib/config';
 	import home from '$lib/assets/home/water.png?format=webp&lossless';
-	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 
-	const drawerStore = getDrawerStore();
-
-	const drawerSettings: DrawerSettings = {
-		id: 'example-3',
-		bgDrawer: 'bg-surface-50 dark:bg-surface-900',
-		bgBackdrop: '',
-		width: 'min-w-full',
-		padding: '',
-		rounded: 'rounded-none',
-		duration: 1100
+	//Modal
+	import { type ModalSettings, getModalStore } from '@skeletonlabs/skeleton';
+	const modal: ModalSettings = {
+		type: 'component',
+		component: 'modalComponentOne',
+		backdropClasses: '!bg-surface-50 dark:!bg-surface-900'
 	};
-
-	function drawerOpen(): void {
-		drawerStore.open(drawerSettings);
+	const modalStore = getModalStore();
+	function modalOpen(): void {
+		modalStore.trigger(modal);
 	}
 </script>
 
@@ -25,13 +20,11 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<button class="" on:click={drawerOpen}>
+<button on:click={modalOpen}>
 	<img
 		class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0"
-		in:fade={{ delay: 600, duration: 1500 }}
+		in:fade={{ delay: 610, duration: 600 }}
 		src={home}
 		alt="Home"
 	/>
 </button>
-
-<!-- <div class="w-full h-full bg-no-repeat bg-center bg-cover bg-fixed bg-[image:url('$lib/assets/home/water.png')]" /> -->

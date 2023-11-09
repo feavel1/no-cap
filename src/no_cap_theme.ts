@@ -87,8 +87,8 @@ export const no_cap_theme: CustomThemeConfig = {
 		'--color-error-800': '127 15 71', // #7f0f47
 		'--color-error-900': '104 12 58', // #680c3a
 		// surface | #264056
-		'--color-surface-50': '222 226 230', // #dee2e6
-		'--color-surface-100': '212 217 221', // #d4d9dd
+		'--color-surface-50': '250 250 250', // #dee2e6
+		'--color-surface-100': '235 235 235', // #d4d9dd
 		'--color-surface-200': '201 207 213', // #c9cfd5
 		'--color-surface-300': '168 179 187', // #a8b3bb
 		'--color-surface-400': '103 121 137', // #677989

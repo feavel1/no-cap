@@ -3,6 +3,7 @@
 	import Carousel from 'svelte-carousel';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import type { PopupSettings } from '@skeletonlabs/skeleton';
 
 	export let modules;
 	export let title: string;
@@ -40,21 +41,33 @@
 			ready = true;
 		}, 1200);
 	});
+
+	const popupHover: PopupSettings = {
+		event: 'hover',
+		target: 'popupHover',
+		placement: 'top'
+	};
 </script>
 
 {#if browser && ready == true}
 	<Carousel on:pageChange={(event) => setNumber(event)} bind:this={carousel}>
-		<div class="flex flex-col justify-center" on:click={() => prevImage()} slot="prev">
-			<button class="btn-icon">←</button>
+		<div class="absolute h-[100%] w-[50%]" on:click={() => prevImage()} slot="prev">
+			<button id="button_left" class="btn-icon absolute h-full w-full z-50"></button>
 		</div>
-		<div class="flex flex-col justify-center" slot="next" on:click={() => nextImage()}>
-			<button class="btn-icon">→</button>
+		<div
+			class="absolute h-[100%] w-[50%] justify-end right-0"
+			slot="next"
+			on:click={() => nextImage()}
+		>
+			<button id="button_right" class="btn-icon absolute h-full w-full z-50"></button>
 		</div>
 		{#each images as src}
-			<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
+			<div class="w-min">
+				<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
+			</div>
 		{/each}
 	</Carousel>
-	<div class="flex flex-col items-center justify-center mx-auto font-thin">
+	<div class="font-thin">
 		<div>
 			<span class="line-through">{currentSlideItem + 1}/{images.length}</span>
 			<span class="font-bold">{title}</span>

@@ -1,5 +1,9 @@
+<script>
+	export let fillColor = 'dark:fill-white';
+</script>
+
 <svg
-	class="w-52 dark:fill-white hover:fill-primary-500 hover:transition-all"
+	class="w-52 hover:fill-primary-500 hover:transition-all {fillColor}"
 	viewBox="0 0 1251 169"
 	xmlns="http://www.w3.org/2000/svg"
 >

@@ -1,77 +1,66 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-
 	import '../app.postcss';
 	import {
 		AppShell,
 		AppBar,
 		// storeHighlightJs,
-		Drawer,
-		getDrawerStore,
 		LightSwitch,
 		autoModeWatcher,
-		// Toast,
-		// type DrawerSettings,
-		initializeStores
+		initializeStores,
+		Modal,
+		getModalStore,
+		type ModalComponent,
+		Drawer
 	} from '@skeletonlabs/skeleton';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 
-	import Navigation from '$lib/ui/Navigation.svelte';
 	import HamburgerIcon from '$lib/ui/HamburgerIcon.svelte';
 	import Logo from '$lib/ui/icons/Logo.svelte';
 	import PageTransition from '$lib/ui/PageTransition.svelte';
 	import type { PageData } from './$types';
+	import { fade } from 'svelte/transition';
+	import CustomModalMenu from '$lib/ui/drawer/CustomModalMenu.svelte';
 	import Breadcrumbs from '$lib/ui/Breadcrumbs.svelte';
-	import { onMount } from 'svelte';
 	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
+
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	initializeStores();
-	const drawerStore = getDrawerStore();
+
+	const modalStore = getModalStore();
 
 	export let data: PageData;
-
-	function drawerClose(): void {
-		drawerStore.close();
-	}
-
-	let translate = 'translate-x-[-10%]';
-	$: positionClasses = $drawerStore.open ? '' : '';
 
 	let ready = false;
 
 	onMount(() => {
-		// setTimeout(() => {
 		ready = true;
-		// }, 300);
 	});
 
-	// $: classesSidebar = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
+	const modalRegistry: Record<string, ModalComponent> = {
+		// Set a unique modal ID, then pass the component reference
+		modalComponentOne: { ref: CustomModalMenu }
+	};
 </script>
 
 <svelte:head>
 	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
 </svelte:head>
 
-<Drawer position="left">
-	<div class="flex items-center justify-between px-4 lg:px-8 py-5 z-50">
-		<div class="flex flex-row justify-center gap-5">
-			<div class="flex flex-row">
-				<Logo />
-			</div>
-		</div>
-		<button class="btn btn-sm variant-ghost-surface" on:click={drawerClose}>
-			<span>⛌</span>
-		</button>
-	</div>
-	<Navigation />
-</Drawer>
+<Modal
+	components={modalRegistry}
+	transitionIn={fade}
+	transitionOut={fade}
+	transitionInParams={{ duration: 600 }}
+	transitionOutParams={{ duration: 500 }}
+/>
 
-<AppShell class="transition-transform {positionClasses} ">
+<AppShell class="transition-transform">
 	<svelte:fragment slot="header">
-		<AppBar class="px-4 lg:px-8" background="">
+		<AppBar class="px-4 lg:px-16 lg:pt-10" background="">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row justify-center gap-5">
 					<div class="flex flex-row">
@@ -88,11 +77,11 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	{#if !ready}
+	<!-- {#if !ready}
 		<Jellyfish />
-	{/if}
+	{/if} -->
 	<PageTransition key={data.url}>
-		<div class="px-4 lg:px-8">
+		<div class="px-4 lg:px-16">
 			<slot />
 		</div>
 	</PageTransition>
