@@ -6,7 +6,7 @@
 	export let pageText: String;
 	const typewriter = (node: Element, { speed = 1, easing = linear } = {}) => {
 		const text = node.textContent ?? '';
-		const duration = text.length / (speed * 0.005);
+		const duration = text.length / (speed * 0.007);
 		return {
 			easing,
 			duration,
@@ -23,7 +23,7 @@
 		ready = false;
 		setTimeout(() => {
 			ready = true;
-		}, 5000);
+		}, 4000);
 	});
 </script>
 

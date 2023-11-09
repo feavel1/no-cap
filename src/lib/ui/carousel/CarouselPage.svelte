@@ -3,7 +3,6 @@
 	import Carousel from 'svelte-carousel';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
-	import type { PopupSettings } from '@skeletonlabs/skeleton';
 
 	export let modules;
 	export let title: string;
@@ -41,28 +40,18 @@
 			ready = true;
 		}, 1200);
 	});
-
-	const popupHover: PopupSettings = {
-		event: 'hover',
-		target: 'popupHover',
-		placement: 'top'
-	};
 </script>
 
 {#if browser && ready == true}
 	<Carousel on:pageChange={(event) => setNumber(event)} bind:this={carousel}>
 		<div class="absolute h-[100%] w-[50%]" on:click={() => prevImage()} slot="prev">
-			<button id="button_left" class="btn-icon absolute h-full w-full z-50"></button>
+			<button class="cursor-l btn-icon absolute h-full w-full z-20" />
 		</div>
-		<div
-			class="absolute h-[100%] w-[50%] justify-end right-0"
-			slot="next"
-			on:click={() => nextImage()}
-		>
-			<button id="button_right" class="btn-icon absolute h-full w-full z-50"></button>
+		<div class="absolute h-[100%] w-[50%] right-0" slot="next" on:click={() => nextImage()}>
+			<button class="cursor-r btn-icon absolute h-full w-full z-20" />
 		</div>
 		{#each images as src}
-			<div class="w-min">
+			<div class="w-min select-none">
 				<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
 			</div>
 		{/each}
@@ -75,3 +64,19 @@
 		<div class="capitalize">NOCAP all rights reserved ℗</div>
 	</div>
 {/if}
+
+<style>
+	.cursor-l {
+		cursor:
+			url("data:image/svg+xml,%3Csvg width='94' height='74' viewBox='0 0 94 74' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath id='Path' fill='none' stroke='%231a1a1a' opacity='0.6' d='M 93.5 73.5 L 30 37.5 L 93.5 0.5'/%3E %3Cpath id='path1' fill='none' stroke='%231a1a1a' opacity='0.07' d='M 0.5 74 L 0.5 0'/%3E %3C/svg%3E ")
+				8 8,
+			pointer;
+	}
+	.cursor-r {
+		/* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='94px' height='74px' stroke='rgb(26,26,26)'%3E%3Cpolyline opacity='0.6' fill='none' points='0.5,0.5 64,36.5 0.5,73.5 '%3E%3C/polyline%3E%3Cline opacity='0.07' fill='none' x1='93.5' y1='0' x2='93.5' y2='74'%3E%3C/line%3E%3C/svg%3E"); */
+		cursor:
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='94px' height='74px' stroke='rgb(26,26,26)'%3E%3Cpolyline opacity='0.6' fill='none' points='0.5,0.5 64,36.5 0.5,73.5 '%3E%3C/polyline%3E%3Cline opacity='0.07' fill='none' x1='93.5' y1='0' x2='93.5' y2='74'%3E%3C/line%3E%3C/svg%3E")
+				8 8,
+			pointer;
+	}
+</style>
