@@ -44,15 +44,19 @@
 
 {#if browser && ready == true}
 	<Carousel on:pageChange={(event) => setNumber(event)} bind:this={carousel}>
-		<div class="absolute h-[100%] w-[50%]" on:click={() => prevImage()} slot="prev">
+		<div class="absolute sm:block hidden h-[100%] w-[50%]" on:click={() => prevImage()} slot="prev">
 			<button class="cursor-l btn-icon absolute h-full w-full z-20" />
 		</div>
-		<div class="absolute h-[100%] w-[50%] right-0" slot="next" on:click={() => nextImage()}>
+		<div
+			class="absolute sm:block hidden h-[100%] w-[50%] right-0"
+			slot="next"
+			on:click={() => nextImage()}
+		>
 			<button class="cursor-r btn-icon absolute h-full w-full z-20" />
 		</div>
 		{#each images as src}
 			<div class="w-min select-none">
-				<Img {src} class="w-auto mx-auto max-h-[80vh] my-img" />
+				<Img {src} class="w-auto mx-auto max-h-[70vh] lg:max-h-[80vh] my-img" />
 			</div>
 		{/each}
 	</Carousel>
