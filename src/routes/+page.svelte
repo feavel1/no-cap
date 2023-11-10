@@ -20,7 +20,7 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<button on:click={modalOpen}>
+<button on:mousedown={modalOpen}>
 	<img
 		class="fixed w-full h-full bg-no-repeat bg-center bg-cover bg-fixed top-0 left-0"
 		in:fade={{ delay: 610, duration: 600 }}

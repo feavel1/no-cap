@@ -63,7 +63,7 @@
 
 <AppShell class="transition-transform">
 	<svelte:fragment slot="header">
-		<AppBar class="px-4 lg:px-16 lg:pt-10" background="">
+		<AppBar class="px-4 lg:px-16 pt-2 pb-1 lg:pt-10" background="">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row align-middle justify-center gap-5">
 					<div class="flex flex-row">
@@ -71,7 +71,7 @@
 							<Logo path={$page.url.pathname} />
 						</a>
 					</div>
-					<Breadcrumbs path={$page.url.pathname} />
+					<!-- <Breadcrumbs path={$page.url.pathname} /> -->
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">

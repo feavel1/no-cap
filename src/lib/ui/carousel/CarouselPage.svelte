@@ -65,7 +65,7 @@
 			<span class="line-through">{currentSlideItem + 1}/{images.length}</span>
 			<span class="font-bold">{title}</span>
 		</div>
-		<div class="capitalize">NOCAP all rights reserved ℗</div>
+		<div class="capitalize text-sm">NOCAP all rights reserved ℗</div>
 	</div>
 {/if}
 

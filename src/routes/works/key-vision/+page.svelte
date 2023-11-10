@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>{config.title}</title>
+	<title>Key-Vision - {config.title}</title>
 </svelte:head>
 
 <div
