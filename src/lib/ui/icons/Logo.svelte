@@ -1,5 +1,13 @@
 <script>
-	export let fillColor = 'dark:fill-white';
+	export let path = '';
+	let fillColor = 'dark:fill-white';
+	$: {
+		if (path === '/') {
+			fillColor = 'fill-white';
+		} else {
+			fillColor = 'dark:fill-white';
+		}
+	}
 </script>
 
 <svg

@@ -1,9 +1,14 @@
 <script>
 	import A from '$lib/ui/aLink/A.svelte';
+	import * as config from '$lib/config';
 
 	import Group from '$lib/ui/home/Group.svelte';
 	import { fade } from 'svelte/transition';
 </script>
+
+<svelte:head>
+	<title>{config.title}</title>
+</svelte:head>
 
 <div
 	in:fade={{ delay: 610, duration: 600 }}

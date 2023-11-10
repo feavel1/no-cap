@@ -21,7 +21,7 @@
 	<div class="fixed top-0 w-full">
 		<div class="flex items-center justify-between px-4 pt-5 lg:px-16 lg:pt-11 z-50">
 			<div class="flex flex-row justify-center gap-5">
-				<div class="flex flex-row">
+				<div class="flex flex-row pt-1">
 					<Logo />
 				</div>
 			</div>

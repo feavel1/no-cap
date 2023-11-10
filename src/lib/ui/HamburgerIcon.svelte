@@ -22,7 +22,7 @@
 	on:click={modalOpen}
 	aria-expanded="false"
 	aria-label={ariaLabel}
-	class="hover:rotate-90 transition-all duration-700"
+	class="hover:rotate-90 transition-all duration-700 pb-1"
 >
 	<svg class:open viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" {width}>
 		<path

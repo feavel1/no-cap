@@ -65,10 +65,10 @@
 	<svelte:fragment slot="header">
 		<AppBar class="px-4 lg:px-16 lg:pt-10" background="">
 			<svelte:fragment slot="lead">
-				<div class="flex flex-row justify-center gap-5">
+				<div class="flex flex-row align-middle justify-center gap-5">
 					<div class="flex flex-row">
 						<a href="/">
-							<Logo />
+							<Logo path={$page.url.pathname} />
 						</a>
 					</div>
 					<Breadcrumbs path={$page.url.pathname} />

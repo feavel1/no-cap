@@ -18,11 +18,11 @@
 		});
 
 		// Add a way to get home too.
-		crumbs.unshift({ label: '主页', href: '/' });
+		// crumbs.unshift({ label: '主页', href: '/' });
 	}
 </script>
 
-<ol class="breadcrumb font-mono lg:flex hidden">
+<ol class="breadcrumb font-mono lg:flex hidden pt-1">
 	{#each crumbs as crumb, i}
 		{#if i == crumbs.length - 1}
 			<li class="crumb">
