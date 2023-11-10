@@ -61,8 +61,8 @@
 	transitionOutParams={{ duration: 500 }}
 />
 
-<AppShell class="transition-transform">
-	<svelte:fragment slot="header">
+<AppShell slotPageHeader="sticky top-0 z-10">
+	<svelte:fragment slot="pageHeader">
 		<AppBar class="px-4 lg:px-16 pt-2 pb-1 lg:pt-10" background="">
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row align-middle justify-center gap-5">
