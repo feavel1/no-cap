@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
+	import * as config from '$lib/config';
+
 	import {
 		AppShell,
 		AppBar,
@@ -9,8 +11,7 @@
 		initializeStores,
 		Modal,
 		getModalStore,
-		type ModalComponent,
-		Drawer
+		type ModalComponent
 	} from '@skeletonlabs/skeleton';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -25,6 +26,7 @@
 	import CustomModalMenu from '$lib/ui/drawer/CustomModalMenu.svelte';
 	import Breadcrumbs from '$lib/ui/Breadcrumbs.svelte';
 	import Jellyfish from '$lib/ui/spinner/Jellyfish.svelte';
+	import { page } from '$app/stores';
 
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
@@ -48,6 +50,7 @@
 
 <svelte:head>
 	{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+	<title>{config.title}</title>
 </svelte:head>
 
 <Modal
@@ -68,7 +71,7 @@
 							<Logo />
 						</a>
 					</div>
-					<!-- <Breadcrumbs path={$page.url.pathname} /> -->
+					<Breadcrumbs path={$page.url.pathname} />
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
